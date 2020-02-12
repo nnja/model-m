@@ -42,8 +42,13 @@ int keymap[rows][cols] = {
 
 /* Keymap modifications. These are done here to keep the above keymap matching the physical keys */
 void user_keymap() {
-  // Map caps lock to command/windows/gui key
-  keymap[1][3] = MODIFIERKEY_LEFT_GUI;
+  // Map left caps lock to ctrl
+  keymap[1][3] = MODIFIERKEY_LEFT_CTRL;
+  // Map left ctrl to alt
+  keymap[2][0] = MODIFIERKEY_LEFT_ALT;
+  // Map alt to command/windows/gui key
+  keymap[0][15] = MODIFIERKEY_LEFT_GUI;
+
   // Make printscr, scroll lock, and pause media keys (prev, next, and play/pause)
   keymap[3][15] = KEY_MEDIA_PREV_TRACK;
   keymap[4][15] = KEY_MEDIA_NEXT_TRACK;
